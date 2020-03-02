@@ -36,7 +36,7 @@ exports.handler = async(event, context) => {
 
         return {
 
-            "message": "could not update update",
+            "message": "could not update",
             "status": "error"
         }
 

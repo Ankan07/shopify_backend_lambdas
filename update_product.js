@@ -21,7 +21,7 @@ exports.handler = async(event, context) => {
     context.callbackWaitsForEmptyEventLoop = false;
     try {
         const db = await connectToDb('shopify_database');
-        var count = await db.collection('shopify').updateOne({ "_id": ObjectId(event.id) }, { $set: { "email": event.email, "total_price": event.price } })
+        var  update_result= await db.collection('shopify').updateOne({ "_id": ObjectId(event.id) }, { $set: { "email": event.email, "total_price": event.price } })
 
         return {
             "message": "updated",
@@ -36,10 +36,7 @@ exports.handler = async(event, context) => {
 
         return {
 
-
-
-
-            "message": "could not update updated",
+            "message": "could not update update",
             "status": "error"
         }
 

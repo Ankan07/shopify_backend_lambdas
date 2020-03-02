@@ -19,9 +19,9 @@ exports.handler = async (event, context) => {
     context.callbackWaitsForEmptyEventLoop = false;
    try{
     const db = await connectToDb('shopify_database');
-    var count = await db.collection('shopify').insertOne(event);
+    var insert = await db.collection('shopify').insertOne(event);
     
-    return count
+    return insert
    }
    
    
